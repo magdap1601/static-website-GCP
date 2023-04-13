@@ -6,7 +6,7 @@ resource "google_storage_bucket" "static-site" {
   uniform_bucket_level_access = true
 
   website {
-    main_page_suffix = "./website/index.html"
+    main_page_suffix = "index.html"
     not_found_page   = "404.html"
   }
   cors {
@@ -38,5 +38,10 @@ resource "google_storage_bucket_object" "picture" {
 resource "google_storage_bucket_object" "style" {
   name   = "styles.css"
   source = "./website/styles.css"
+  bucket = "static-website-terraform"
+}
+resource "google_storage_bucket_object" "main-page-html" {
+  name   = "main-page-html"
+  source = "./website/index.html"
   bucket = "static-website-terraform"
 }
