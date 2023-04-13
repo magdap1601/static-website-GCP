@@ -3,6 +3,8 @@ resource "google_storage_bucket" "static-site" {
   location      = "EU"
   force_destroy = true
 
+  uniform_bucket_level_access = true
+
   website {
     main_page_suffix = "./website/index.html"
     not_found_page   = "404.html"
@@ -15,10 +17,18 @@ resource "google_storage_bucket" "static-site" {
   }
 }
 
-resource "google_storage_bucket_access_control" "public_rule" {
+/*resource "google_storage_bucket_access_control" "public_rule" {
   bucket = google_storage_bucket.static-site.name
   role   = "READER"
   entity = "allUsers"
+}*/
+
+resource "google_storage_bucket_iam_binding" "static-site_iam_binding" {
+  bucket = google_storage_bucket.static-site.name
+  role   = "roles/storage.objectViewer"
+  members = [
+    "allUsers"
+  ]
 }
 resource "google_storage_bucket_object" "picture" {
   name   = "img1.jpg"
