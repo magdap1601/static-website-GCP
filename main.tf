@@ -18,7 +18,7 @@ resource "google_storage_bucket" "static-site" {
 }
 
 resource "google_storage_bucket_access_control" "public_rule" {
-  bucket = google_storage_bucket.static-website.name
+  bucket = google_storage_bucket.static-site.name
   role   = "READER"
   entity = "allUsers"
 }
