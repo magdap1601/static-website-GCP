@@ -10,3 +10,9 @@ In this task:
 
 If you want to work with HCL you should install Terraform. When you create terrform files, for example backend.tf, main.tf or provider.tf (as in this example) is important to format code. When you deploy application, unformatted code might create Error.
 
+If the code works, you should see:
+
+![Example screenshot](./img/static.jpg)
+
+
+LINK --->https://storage.googleapis.com/static-website-terraform/index.html
