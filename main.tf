@@ -35,12 +35,6 @@ resource "google_storage_bucket_object" "picture" {
   source = "./website/img1.jpg"
   bucket = "static-website-terraform"
 }
-resource "google_storage_bucket_object" "style1" {
-  name         = "style.css"
-  source       = "./website/style.css"
-  bucket       = "static-website-terraform"
-  content_type = "text/css"
-}
 resource "google_storage_bucket_object" "main-page-html" {
   name   = "index.html"
   source = "./website/index.html"
