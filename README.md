@@ -12,7 +12,8 @@ When you create terrform files backend.tf, main.tf or provider.tf (as in this ex
 
 **Quick start**
 1. Create repository, generate private key on GCP in IAM & Admin Service account and add to created repository.
-2. Push the code and build infrastructure :smile:
+2. Add ID project in variables.tf
+3. Push the code and build infrastructure :smile:
 
 **Screenshot**
 
