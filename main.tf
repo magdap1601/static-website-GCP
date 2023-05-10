@@ -1,6 +1,14 @@
+resource "google_storage_bucket" "bucket_with_backend" {
+  name          = var.bucket_backend_name
+  location      = var.bucket_location
+  force_destroy = true
+
+  public_access_prevention = "enforced"
+}
+
 resource "google_storage_bucket" "static-site" {
-  name          = "static-website-terraform"
-  location      = "EU"
+  name          = var.bucket_name
+  location      = var.bucket_location
   force_destroy = true
 
   uniform_bucket_level_access = true
@@ -16,12 +24,6 @@ resource "google_storage_bucket" "static-site" {
     max_age_seconds = 3600
   }
 }
-
-/*resource "google_storage_bucket_access_control" "public_rule" {
-  bucket = google_storage_bucket.static-site.name
-  role   = "READER"
-  entity = "allUsers"
-}*/
 
 resource "google_storage_bucket_iam_binding" "static-site_iam_binding" {
   bucket = google_storage_bucket.static-site.name

@@ -8,7 +8,13 @@ In this task:
 - [x] Create template website localy and add to created bucket also using Terraform.
 - [x] Deploy application using CI/CD on command 'push'. You can also change command to push resurces, for example 'pull request'.
 
-If you want to work with HCL you should install Terraform. When you create terrform files, for example backend.tf, main.tf or provider.tf (as in this example) is important to format code. When you deploy application, unformatted code might create Error.
+When you create terrform files backend.tf, main.tf or provider.tf (as in this example) is important to format code. When you deploy application, unformatted code might create Error.
+
+**Quick start**
+1. Create repository, generate private key on GCP in IAM & Admin Service account and add to created repository.
+2. Push the code and build infrastructure :smile:
+
+**Screenshot**
 
 If the code works, you should see:
 
