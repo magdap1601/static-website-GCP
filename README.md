@@ -20,5 +20,3 @@ If the code works, you should see:
 
 ![Example screenshot](./img/static.jpg)
 
-
-LINK --->https://storage.googleapis.com/static-website-terraform/index.html
